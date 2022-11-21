@@ -1,0 +1,93 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Factorial of a given number
+    2 00000000                 AREA             PROGRAM,CODE,READONLY
+    3 00000000                 ENTRY
+    4 00000000         START
+    5 00000000 E51F0008        LDR              R0,NUM
+    6 00000004 E2401001        SUB              R1,R0,#1
+    7 00000008         TOP
+    8 00000008 E3510000        CMP              R1,#0
+    9 0000000C 0A000002        BEQ              STOP
+   10 00000010 E0000091        MUL              R0,R1,R0
+   11 00000014 E2411001        SUB              R1,R1,#1
+   12 00000018 EAFFFFFA        B                TOP
+   13 0000001C         
+   14 0000001C EAFFFFFE 
+                       STOP    B                STOP
+   15 00000020                 AREA             DATA3, DATA,READONLY
+   16 00000000 00000005 
+                       NUM     DCD              5
+   17 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\factorial.d -o.\objects\factorial.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_
+v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION
+ SETA 529" --list=.\listings\factorial.lst factorial.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 2 in file factorial.s
+   Uses
+      None
+Comment: PROGRAM unused
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 4 in file factorial.s
+   Uses
+      None
+Comment: START unused
+STOP 0000001C
+
+Symbol: STOP
+   Definitions
+      At line 14 in file factorial.s
+   Uses
+      At line 9 in file factorial.s
+      At line 14 in file factorial.s
+
+TOP 00000008
+
+Symbol: TOP
+   Definitions
+      At line 7 in file factorial.s
+   Uses
+      At line 12 in file factorial.s
+Comment: TOP used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA3 00000000
+
+Symbol: DATA3
+   Definitions
+      At line 15 in file factorial.s
+   Uses
+      None
+Comment: DATA3 unused
+NUM 00000000
+
+Symbol: NUM
+   Definitions
+      At line 16 in file factorial.s
+   Uses
+      At line 5 in file factorial.s
+Comment: NUM used once
+2 symbols
+338 symbols in table

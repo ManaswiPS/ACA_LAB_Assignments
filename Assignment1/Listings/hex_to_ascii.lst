@@ -1,0 +1,81 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Convert a given number from 0x4000 0000 hex value to AS
+                       CII. (CO1-TL0-1.1)
+    2 00000000         ;AREA DATA1, DATA,READWRITE
+    3 00000000         
+    4 00000000         
+    5 00000000                 AREA             Program,CODE,READONLY
+    6 00000000         ENTRY
+    7 00000000         
+    8 00000000 E3A01101        LDR              R1,=0x40000000 ;
+    9 00000004 E5D10000        LDRB             R0,[R1]     ;
+   10 00000008 E350000A        CMP              R0,#0xA     ;
+   11 0000000C BA000000        BLT              NEXT
+   12 00000010 E2800007        ADD              R0,R0,#7    ;
+   13 00000014         NEXT
+   14 00000014 E2800030        ADD              R0,R0,#0x30 ;
+   15 00000018 E59F3008        LDR              R3,=RESULT  ;
+   16 0000001C E5C30000        STRB             R0,[R3]     ;
+   17 00000020         STOP
+   18 00000020 EAFFFFFE        B                STOP
+   19 00000024 00      RESULT  DCB              0
+   20 00000025                 END
+              00 00 00 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\hex_to_ascii.d -o.\objects\hex_to_ascii.o -IC:\Keil_v5\ARM\RV31\INC -IC:
+\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_V
+ERSION SETA 529" --list=.\listings\hex_to_ascii.lst hex_to_ascii.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 6 in file hex_to_ascii.s
+   Uses
+      None
+Comment: ENTRY unused
+NEXT 00000014
+
+Symbol: NEXT
+   Definitions
+      At line 13 in file hex_to_ascii.s
+   Uses
+      At line 11 in file hex_to_ascii.s
+Comment: NEXT used once
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 5 in file hex_to_ascii.s
+   Uses
+      None
+Comment: Program unused
+RESULT 00000024
+
+Symbol: RESULT
+   Definitions
+      At line 19 in file hex_to_ascii.s
+   Uses
+      At line 15 in file hex_to_ascii.s
+Comment: RESULT used once
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 17 in file hex_to_ascii.s
+   Uses
+      At line 18 in file hex_to_ascii.s
+Comment: STOP used once
+5 symbols
+339 symbols in table

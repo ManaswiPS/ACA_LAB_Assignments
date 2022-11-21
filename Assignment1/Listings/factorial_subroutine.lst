@@ -1,0 +1,98 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; FACTORIAL OF 5 = (120)D = (78)H RESULT IS IN R0
+    2 00000000         
+    3 00000000                 AREA             mycode, CODE, READONLY
+    4 00000000                 ENTRY
+    5 00000000         
+    6 00000000         
+    7 00000000 E3A00005        ldr              r0,=05
+    8 00000004 EB000000        bl               factorial
+    9 00000008 EAFFFFFE 
+                       stop    b                stop
+   10 0000000C         
+   11 0000000C         factorial
+   12 0000000C E92D4010        push             {r4,lr}
+   13 00000010         
+   14 00000010         
+   15 00000010 E1A04000        mov              r4,r0       ;//make a copy of r
+                                                            0 
+   16 00000014         
+   17 00000014         
+   18 00000014 E3500000        cmp              r0,#0       ;//compare r0 with 
+                                                            0 
+   19 00000018         
+   20 00000018         
+   21 00000018 1A000001        bne              not_zero    ;//branch to not_ze
+                                                            ro if not equal  
+   22 0000001C E3A00001        mov              r0,#1       ;//r0=1 
+   23 00000020 EA000003        b                last
+   24 00000024         not_zero
+   25 00000024 E2400001        sub              r0,r0,#1    ;//r0=r0-1 
+   26 00000028 EBFFFFF7        bl               factorial   ;//call recursively
+                                                             factorial 
+   27 0000002C E1A01004        mov              r1,r4
+   28 00000030 E0000091        mul              r0,r1,r0    ;//r0=r0*r1 
+   29 00000034         last
+   30 00000034 E8BD4010        pop              {r4,lr}     ;//pop <=> ldmia sp
+                                                            ! {r4,lr} 
+   31 00000038 E12FFF1E        bx               lr
+   32 0000003C                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\factorial_subroutine.d -o.\objects\factorial_subroutine.o -IC:\Keil_v5\A
+RM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predef
+ine="__UVISION_VERSION SETA 529" --list=.\listings\factorial_subroutine.lst fac
+torial_subroutine.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+factorial 0000000C
+
+Symbol: factorial
+   Definitions
+      At line 11 in file factorial_subroutine.s
+   Uses
+      At line 8 in file factorial_subroutine.s
+      At line 26 in file factorial_subroutine.s
+
+last 00000034
+
+Symbol: last
+   Definitions
+      At line 29 in file factorial_subroutine.s
+   Uses
+      At line 23 in file factorial_subroutine.s
+Comment: last used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 3 in file factorial_subroutine.s
+   Uses
+      None
+Comment: mycode unused
+not_zero 00000024
+
+Symbol: not_zero
+   Definitions
+      At line 24 in file factorial_subroutine.s
+   Uses
+      At line 21 in file factorial_subroutine.s
+Comment: not_zero used once
+stop 00000008
+
+Symbol: stop
+   Definitions
+      At line 9 in file factorial_subroutine.s
+   Uses
+      At line 9 in file factorial_subroutine.s
+Comment: stop used once
+5 symbols
+337 symbols in table

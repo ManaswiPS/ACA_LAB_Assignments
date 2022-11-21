@@ -1,0 +1,22 @@
+;Factorial of a given number
+	AREA PROGRAM,CODE,READONLY
+	ENTRY
+START
+		LDR R0,NUM
+		SUB R1,R0,#1
+TOP
+		CMP R1,#0
+		BEQ STOP
+		MUL R0,R1,R0
+		SUB R1,R1,#1
+		B TOP
+		
+STOP	B STOP
+	AREA DATA3, DATA,READONLY
+NUM	DCD	5
+	END
+
+		 
+		
+	
+	

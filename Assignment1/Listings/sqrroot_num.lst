@@ -1,0 +1,81 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; SQUARE ROOT
+    2 00000000                 AREA             PROGRAM,CODE,READONLY
+    3 00000000                 ENTRY
+    4 00000000         Main
+    5 00000000 E3A02101        LDR              R2,=0x40000000
+    6 00000004 E5922000        LDR              R2,[R2]     ;A
+    7 00000008 E3A00001        LDR              R0,=0x01    ; D
+    8 0000000C E3A01001        LDR              R1,=0x01    ;E
+    9 00000010         loop1
+   10 00000010 E0422000        SUB              R2,R2,R0
+   11 00000014 E3520000        CMP              R2,#0
+   12 00000018 0A000003        BEQ              loop
+   13 0000001C E2800001        ADD              R0,#1
+   14 00000020 E2800001        ADD              R0,#1
+   15 00000024 E2811001        ADD              R1,#1
+   16 00000028 EAFFFFF8        B                loop1
+   17 0000002C         loop
+   18 0000002C E3A031C1        LDR              R3,=0x40000030
+   19 00000030 E5831000        STR              R1,[R3]
+   20 00000034         
+   21 00000034 EAFFFFFE 
+                       STOP    B                STOP
+   22 00000038                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\sqrroot_num.d -o.\objects\sqrroot_num.o -IC:\Keil_v5\ARM\RV31\INC -IC:\K
+eil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VER
+SION SETA 529" --list=.\listings\sqrroot_num.lst sqrroot_num.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 4 in file sqrroot_num.s
+   Uses
+      None
+Comment: Main unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 2 in file sqrroot_num.s
+   Uses
+      None
+Comment: PROGRAM unused
+STOP 00000034
+
+Symbol: STOP
+   Definitions
+      At line 21 in file sqrroot_num.s
+   Uses
+      At line 21 in file sqrroot_num.s
+Comment: STOP used once
+loop 0000002C
+
+Symbol: loop
+   Definitions
+      At line 17 in file sqrroot_num.s
+   Uses
+      At line 12 in file sqrroot_num.s
+Comment: loop used once
+loop1 00000010
+
+Symbol: loop1
+   Definitions
+      At line 9 in file sqrroot_num.s
+   Uses
+      At line 16 in file sqrroot_num.s
+Comment: loop1 used once
+5 symbols
+337 symbols in table

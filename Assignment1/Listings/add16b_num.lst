@@ -1,0 +1,48 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Program,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000         Main
+    4 00000000 E3A00101        LDR              R0,=0x40000000
+    5 00000004 E5901000        LDR              R1,[R0]
+    6 00000008         
+    7 00000008 E3A00111        LDR              R0,=0x40000004
+    8 0000000C E5902000        LDR              R2,[R0]
+    9 00000010         
+   10 00000010 E0813002        ADD              R3,R1,R2
+   11 00000014 E3A00121        LDR              R0,=0x40000008
+   12 00000018 E5803000        STR              R3,[R0]
+   13 0000001C         
+   14 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add16b_num.d -o.\objects\add16b_num.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Kei
+l_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSI
+ON SETA 529" --list=.\listings\add16b_num.lst add16b_num.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file add16b_num.s
+   Uses
+      None
+Comment: Main unused
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 1 in file add16b_num.s
+   Uses
+      None
+Comment: Program unused
+2 symbols
+334 symbols in table

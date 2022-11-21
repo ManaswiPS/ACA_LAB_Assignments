@@ -1,0 +1,67 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Check if a 32 bit number is negative or positive
+    2 00000000                 AREA             PROGRAM,CODE,READONLY
+    3 00000000                 ENTRY
+    4 00000000         MAIN
+    5 00000000 E3A00101        LDR              R0,=0x40000000
+    6 00000004 E5900000        LDR              R0,[R0]
+    7 00000008 E3500000        CMP              R0,#0x0
+    8 0000000C BA000001        BLT              RESULT
+    9 00000010 E3A01001        LDR              R1,=0x1
+   10 00000014 EA000000        B                STOP
+   11 00000018         RESULT
+   12 00000018 E3A01000        LDR              R1,=0x0
+   13 0000001C EAFFFFFE 
+                       STOP    B                STOP
+   14 00000020                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\check_positive_number.d -o.\objects\check_positive_number.o -IC:\Keil_v5
+\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --pred
+efine="__UVISION_VERSION SETA 529" --list=.\listings\check_positive_number.lst 
+check_positive_number.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 4 in file check_positive_number.s
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 2 in file check_positive_number.s
+   Uses
+      None
+Comment: PROGRAM unused
+RESULT 00000018
+
+Symbol: RESULT
+   Definitions
+      At line 11 in file check_positive_number.s
+   Uses
+      At line 8 in file check_positive_number.s
+Comment: RESULT used once
+STOP 0000001C
+
+Symbol: STOP
+   Definitions
+      At line 13 in file check_positive_number.s
+   Uses
+      At line 10 in file check_positive_number.s
+      At line 13 in file check_positive_number.s
+
+4 symbols
+336 symbols in table

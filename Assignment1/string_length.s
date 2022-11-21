@@ -1,0 +1,20 @@
+;Finding the length of given string
+
+	AREA PROGRAM,CODE,READONLY
+	ENTRY
+MAIN
+	LDR R0,=DATA
+LOOP
+	LDRB R1,[R0],#1
+	CMP R1,CR
+	BEQ	STOP
+	ADD R2,R2,#1
+	B LOOP
+STOP
+	B STOP
+DATA
+	DCB "hello",CR
+	ALIGN
+CR EQU 0x0D
+	END
+	

@@ -1,0 +1,48 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Program,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000         Main
+    4 00000000 E3A00101        LDR              R0,=0x40000000
+    5 00000004 E5901000        LDR              R1,[R0]     ;Load higher 16 bit
+                                                            
+    6 00000008 E5902004        LDR              R2,[R0,#4]  ;Load lower 16 bit
+    7 0000000C         
+    8 0000000C E0813002        ADD              R3,R1,R2
+    9 00000010         
+   10 00000010 E3A00111        LDR              R0,=0x40000004
+   11 00000014 E5803000        STR              R3,[R0]
+   12 00000018                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add16b_num(halfword).d -o.\objects\add16b_num(halfword).o -IC:\Keil_v5\A
+RM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predef
+ine="__UVISION_VERSION SETA 529" --list=.\listings\add16b_num(halfword).lst add
+16b_num(halfword).s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file add16b_num(halfword).s
+   Uses
+      None
+Comment: Main unused
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 1 in file add16b_num(halfword).s
+   Uses
+      None
+Comment: Program unused
+2 symbols
+334 symbols in table

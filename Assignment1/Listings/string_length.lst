@@ -1,0 +1,97 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Finding the length of given string
+    2 00000000         
+    3 00000000                 AREA             PROGRAM,CODE,READONLY
+    4 00000000                 ENTRY
+    5 00000000         MAIN
+    6 00000000 E59F001C        LDR              R0,=DATA
+    7 00000004         LOOP
+    8 00000004 E4D01001        LDRB             R1,[R0],#1
+    9 00000008 E351000D        CMP              R1,CR
+   10 0000000C 0A000001        BEQ              STOP
+   11 00000010 E2822001        ADD              R2,R2,#1
+   12 00000014 EAFFFFFA        B                LOOP
+   13 00000018         STOP
+   14 00000018 EAFFFFFE        B                STOP
+   15 0000001C         DATA
+   16 0000001C 68 65 6C 
+              6C 6F 0D         DCB              "hello",CR
+   17 00000022 00 00           ALIGN
+   18 00000024 0000000D 
+                       CR      EQU              0x0D
+   19 00000024                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\string_length.d -o.\objects\string_length.o -IC:\Keil_v5\ARM\RV31\INC -I
+C:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION
+_VERSION SETA 529" --list=.\listings\string_length.lst string_length.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA 0000001C
+
+Symbol: DATA
+   Definitions
+      At line 15 in file string_length.s
+   Uses
+      At line 6 in file string_length.s
+Comment: DATA used once
+LOOP 00000004
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file string_length.s
+   Uses
+      At line 12 in file string_length.s
+Comment: LOOP used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 5 in file string_length.s
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 3 in file string_length.s
+   Uses
+      None
+Comment: PROGRAM unused
+STOP 00000018
+
+Symbol: STOP
+   Definitions
+      At line 13 in file string_length.s
+   Uses
+      At line 10 in file string_length.s
+      At line 14 in file string_length.s
+
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CR 0000000D
+
+Symbol: CR
+   Definitions
+      At line 18 in file string_length.s
+   Uses
+      At line 9 in file string_length.s
+      At line 16 in file string_length.s
+
+1 symbol
+340 symbols in table

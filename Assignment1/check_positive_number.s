@@ -1,0 +1,16 @@
+;Check if a 32 bit number is negative or positive
+	AREA PROGRAM,CODE,READONLY
+	ENTRY
+MAIN
+	LDR R0,=0x40000000
+	LDR R0,[R0]
+	CMP R0,#0x0
+	BLT RESULT
+	LDR R1,=0x1
+	B STOP
+RESULT
+	LDR R1,=0x0
+STOP B STOP
+	END
+	
+	
