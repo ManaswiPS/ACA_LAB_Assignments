@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../ACA_LABASN_2.srcs/sources_1/new/decoder3to8.v" \
+"../../../../ACA_LABASN_2.srcs/sim_1/new/tb_3to8.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

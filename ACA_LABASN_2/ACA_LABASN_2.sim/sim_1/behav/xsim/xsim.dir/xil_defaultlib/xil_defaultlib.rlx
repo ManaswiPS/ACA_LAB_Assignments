@@ -1,0 +1,16 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_16to1mux.v,1669196385,verilog,,,,tb_16to1mux,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_3to8.v,1669198982,verilog,,,,tb_3to8,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_fa_4_beh.v,1669189730,verilog,,,,tb_fa_4_beh,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_mux.v,1669193865,verilog,,,,tb_mux,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_mux_decoder.v,1669254436,verilog,,,,tb_mux_decoder,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_priorityencoder.v,1669255307,verilog,,,,tb_priorityencoder,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sources_1/new/FA_Behavioural.v,1669258565,verilog,,C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_fa_4_beh.v,,FA_Behavioural;full_adder_4b,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sources_1/new/decoder3to8.v,1669198667,verilog,,C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_3to8.v,,decoder3to8,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sources_1/new/mux4to1.v,1669195897,verilog,,C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_16to1mux.v,,mux16to1;mux4to1,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sources_1/new/mux_decoder.v,1669254348,verilog,,C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_mux_decoder.v,,decoder2to4;mux_decoder,,,,,,,,
+C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sources_1/new/priority_encoderbehave2.v,1669255107,verilog,,C:/Users/MSIS/Documents/ACALab/ACA_LABASN_2/ACA_LABASN_2.srcs/sim_1/new/tb_priorityencoder.v,,priority_encoderbehave,,,,,,,,
